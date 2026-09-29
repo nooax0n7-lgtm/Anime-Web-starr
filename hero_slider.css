@@ -1,0 +1,61 @@
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/aot.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: heroAnime 20s infinite;
+    transform: scale(1.08);
+}
+
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            #05050a 5%,
+            rgba(5,5,10,.82) 45%,
+            rgba(5,5,10,.35) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #05050a 0%,
+            transparent 45%
+        );
+}
+
+@keyframes heroAnime {
+    0%, 20% {
+        background-image: url("../images/aot.jpg");
+        transform: scale(1.08);
+    }
+
+    25%, 45% {
+        background-image: url("../images/demon-slayer.jpg");
+        transform: scale(1.12);
+    }
+
+    50%, 70% {
+        background-image: url("../images/one-piece.jpg");
+        transform: scale(1.08);
+    }
+
+    75%, 95% {
+        background-image: url("../images/jujutsu-kaisen.jpg");
+        transform: scale(1.12);
+    }
+
+    100% {
+        background-image: url("../images/aot.jpg");
+        transform: scale(1.08);
+    }
+}
